@@ -9,7 +9,7 @@ let lockedValue = -1
 let drawmodeActive = false
 let debugModeActive = false
 let gravity
-const MAXSPEED = 5
+const MAXSPEED = 3
 
 
 // Veicule Object
@@ -52,7 +52,7 @@ function Cell(x,y){
 	this.x = x
 	this.y = y
 	this.content = 1
-	this.flows = createVector(noise(x),noise(y))       
+	this.flows = createVector(noise(x % HEIGHT)-0.5,noise(y % WIDTH)-0.5)      
 	this.flip = function () {
 		this.content ? this.content = 0 : this.content = 1
 	}
